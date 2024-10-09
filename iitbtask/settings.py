@@ -29,7 +29,7 @@ SECRET_KEY = 'abcd1234567890'
 
 AUTH_USER_MODEL = "core.User"
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
