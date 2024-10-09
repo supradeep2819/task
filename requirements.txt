@@ -94,4 +94,4 @@ requests==2.31.0
 requests-cache==1.2.0
 requests-file==2.0.0
 requests-toolbelt==1.0.0
-
+uvicorn==0.29.0
