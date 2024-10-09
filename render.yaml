@@ -1,18 +1,7 @@
 services:
   - type: web
-    name: iitbtask
-    env: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "PYTHONPATH=$PYTHONPATH:/opt/render/project/src gunicorn iitbtask.wsgi:application --bind 0.0.0.0:$PORT"
-    envVars:
-      - key: DJANGO_SETTINGS_MODULE
-        value: "iitbtask.settings"
-      - key: ALLOWED_HOSTS
-        value: "task-rodw.onrender.com"
-      - key: PYTHON_VERSION
-        value: "3.11"
     plan: free
-    build:
-      env:
-        PYTHON_VERSION: 3.11
-    workingDirectory: ./  # Adjust if necessary
+    name: mysite
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "python -m gunicorn iitbtask.asgi:application -k uvicorn.workers.UvicornWorker"
