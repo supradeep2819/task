@@ -15,7 +15,7 @@ def check_librarian_role(request)->bool:
     else :
         return True
 
-@router.delete('/users/{member_id}/remove/',response={200: Json, 400: DetailSchema})
+@router.delete('/users/{user_id}/remove/',response={200: Json, 400: DetailSchema})
 def remove_member(request, user_id):
     try:
         #check for librarian role
